@@ -1,10 +1,15 @@
-import Home from '../components/Home.vue'
+import MyCart from '../components/MyCart.vue'
+import Delivery from '../components/Delivery.vue'
 
 export default {
     routes: [
       {
         path: '/',
-        component: Home
+        component: MyCart
+      },
+      {
+        path: '/teslimat',
+        component: Delivery
       }
     ],
     mode: 'history'

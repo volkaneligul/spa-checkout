@@ -1,6 +1,17 @@
 <template>
   <div id="app">
-    <router-view />
+    <div id="site-header" class="site-header header-compact">
+      <div class="content-holder">
+          <router-link to="/" id="logo" class="hepsiburada-logo" title="Sepete dön">hepsiburada.com | her şey ayağına gelsin</router-link>
+      </div>
+  </div>
+    <div class="container">
+      <div id="content" class="content">
+        <div id="checkout-container" class="checkout-container content-holder group">
+          <router-view />
+        </div>
+      </div> 
+    </div>
   </div>
 </template>
 
@@ -15,12 +26,5 @@ export default {
 </script>
 
 <style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>
