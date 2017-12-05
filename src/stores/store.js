@@ -43,6 +43,9 @@ const getters = {
     },
     selectedBillingAddress(state, getters) {
         return state.data.addressItemList.find(data => data.isDefault === true && data.typeCode === 2)
+    },
+    shippingMethodsGroup() {
+        return state.data.shippingMethodsGroup
     }
 }
 

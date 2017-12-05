@@ -18,6 +18,12 @@ export default {
             this.$store.dispatch('fetchChangeCartItemQuantity').then(() => {
                this.isLoading = false;
            }); 
+        },
+        decrease() {
+            this.isLoading = true;
+            this.$store.dispatch('fetchChangeCartItemQuantity').then(() => {
+               this.isLoading = false;
+           }); 
         }
     }
 }
@@ -76,7 +82,7 @@ export default {
                             <div class="quantity-wrapper">
                                 <div class="input-group">
                                     <!-- ko ifnot: quantityFixed() -->
-                                    <button type="button" class="decrease" title="Azalt" data-bind="click: $parent.decrease">
+                                    <button type="button" class="decrease" title="Azalt" @click="decrease">
                                         <span>Azalt</span>
                                     </button>
                                     <input name="quantity" class="quantity" type="number" :value="item.quantity" maxlength="3" data-bind="disable: quantityFixed, value: quantity, valueUpdate: 'afterkeypress', enterkey: $parent.quantityEnterKey.bind($data, $data)">

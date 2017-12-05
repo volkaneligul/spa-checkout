@@ -1,5 +1,6 @@
 var path = require('path')
 var webpack = require('webpack')
+var DashboardPlugin = require('webpack-dashboard/plugin')
 
 module.exports = {
   entry: './src/main.js',
@@ -50,7 +51,10 @@ module.exports = {
   performance: {
     hints: false
   },
-  devtool: '#eval-source-map'
+  devtool: '#eval-source-map',
+  plugins: [
+    new DashboardPlugin()
+  ]
 }
 
 if (process.env.NODE_ENV === 'production') {
